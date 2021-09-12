@@ -29,6 +29,13 @@ app.use((err: Error, request: Request, response: Response, _: NextFunction) => {
     });
 });
 
+app.get('/', (request: Request, response: Response) => {
+    return response.status(200).json({
+        status: 'success',
+        message: 'Server online',
+    });
+});
+
 app.listen(3333, () => {
     console.log('Server started on port 3333!');
 });
