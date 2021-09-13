@@ -1,3 +1,5 @@
+import 'reflect-metadata';
+
 import { injectable, inject } from 'tsyringe';
 
 import { IGame } from '@modules/gameLogParser/dtos/IGameLogDTO';

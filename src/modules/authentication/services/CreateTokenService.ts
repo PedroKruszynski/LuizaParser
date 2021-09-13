@@ -1,12 +1,9 @@
+import 'reflect-metadata';
+
 import { sign } from 'jsonwebtoken';
-import { injectable, inject } from 'tsyringe';
+import { injectable } from 'tsyringe';
 
 import authConfig from '@config/auth';
-
-interface IRequest {
-    email: string;
-    password: string;
-}
 
 interface IResponse {
     token: string;
@@ -25,7 +22,7 @@ class CreateTokenService {
         });
 
         return {
-            token,
+            token
         };
     }
 }

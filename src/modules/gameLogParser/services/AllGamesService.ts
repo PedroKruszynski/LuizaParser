@@ -1,6 +1,7 @@
+import 'reflect-metadata';
+
 import { injectable, inject } from 'tsyringe';
 
-import AppError from '@shared/errors/AppError';
 import { IGames } from '@modules/gameLogParser/dtos/IGameLogDTO';
 
 import ILogProvider from '../providers/LogProvider/models/ILogProvider';
