@@ -1,0 +1,713 @@
+{
+	"info": {
+		"_postman_id": "a892df62-9765-4353-a5c7-c5e0ed1d4a09",
+		"name": "LuizaParse",
+		"description": "Doc of the application LuizaParser made by Pedro Kruszynski",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Games",
+			"item": [
+				{
+					"name": "Game By Name",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/log/:gameName",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"log",
+								":gameName"
+							],
+							"variable": [
+								{
+									"key": "gameName",
+									"value": "game_3"
+								}
+							]
+						},
+						"description": "Get a game by the game name"
+					},
+					"response": [
+						{
+							"name": "Game By Name SUCCESS",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/log/:gameName",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"log",
+										":gameName"
+									],
+									"variable": [
+										{
+											"key": "gameName",
+											"value": "game_3"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "137"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"89-7EFalyt0MTyJMLUfdfkpZwWi2wU\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 13 Sep 2021 23:16:46 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"total_kills\": 4,\n    \"players\": [\n        \"Dono da Bola\",\n        \"Mocinha\",\n        \"Isgalamido\",\n        \"Zeh\"\n    ],\n    \"kills\": {\n        \"Dono da Bola\": -1,\n        \"Mocinha\": 0,\n        \"Isgalamido\": 1,\n        \"Zeh\": -2\n    }\n}"
+						},
+						{
+							"name": "Missing Token",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "authorization",
+										"value": "{{token}}",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/log/:gameName",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"log",
+										":gameName"
+									],
+									"variable": [
+										{
+											"key": "gameName",
+											"value": "game_3"
+										}
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "51"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"33-u+eFzfxjHpXbx4TB7Kcq4P3Fqvg\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 14 Sep 2021 01:32:28 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"error\",\n    \"message\": \"JWT token is missing\"\n}"
+						},
+						{
+							"name": "Invalid Token",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "authorization",
+										"value": "JWT Token",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/log/:gameName",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"log",
+										":gameName"
+									],
+									"variable": [
+										{
+											"key": "gameName",
+											"value": "game_3"
+										}
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "48"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"30-ZydqsoYVsj+qlHQ1CJd+xH0i2k8\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 14 Sep 2021 01:33:12 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"error\",\n    \"message\": \"Invalid JWT token\"\n}"
+						},
+						{
+							"name": "Game Name not exist",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/log/:gameName",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"log",
+										":gameName"
+									],
+									"variable": [
+										{
+											"key": "gameName",
+											"value": "Luiza Of Duty"
+										}
+									]
+								}
+							},
+							"status": "Not Acceptable",
+							"code": 406,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "59"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"3b-SF6w/JqBQnCwpZo0yS9NiFFXU80\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 14 Sep 2021 01:31:55 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"error\",\n    \"message\": \"gameName not existing on log\"\n}"
+						}
+					]
+				},
+				{
+					"name": "All Games",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/log",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"log"
+							]
+						},
+						"description": "Get all games of the log"
+					},
+					"response": [
+						{
+							"name": "All Games SUCCESS",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "authorization",
+										"value": "{{token}}",
+										"description": "JWT TOKEN",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/log",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"log"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "4268"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"10ac-bff4NwyTTfjs2gYKYeoPmwofDO0\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 13 Sep 2021 23:11:30 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"game_1\": {\n        \"total_kills\": 0,\n        \"players\": [\n            \"Isgalamido\"\n        ],\n        \"kills\": {\n            \"Isgalamido\": 0\n        }\n    },\n    \"game_2\": {\n        \"total_kills\": 11,\n        \"players\": [\n            \"Isgalamido\",\n            \"Dono da Bola\",\n            \"Mocinha\"\n        ],\n        \"kills\": {\n            \"Isgalamido\": -7,\n            \"Dono da Bola\": 0,\n            \"Mocinha\": 0\n        }\n    },\n    \"game_3\": {\n        \"total_kills\": 4,\n        \"players\": [\n            \"Dono da Bola\",\n            \"Mocinha\",\n            \"Isgalamido\",\n            \"Zeh\"\n        ],\n        \"kills\": {\n            \"Dono da Bola\": -1,\n            \"Mocinha\": 0,\n            \"Isgalamido\": 1,\n            \"Zeh\": -2\n        }\n    },\n    \"game_4\": {\n        \"total_kills\": 105,\n        \"players\": [\n            \"Dono da Bola\",\n            \"Isgalamido\",\n            \"Zeh\",\n            \"Assasinu Credi\"\n        ],\n        \"kills\": {\n            \"Dono da Bola\": 9,\n            \"Isgalamido\": 19,\n            \"Zeh\": 20,\n            \"Assasinu Credi\": 12\n        }\n    },\n    \"game_5\": {\n        \"total_kills\": 14,\n        \"players\": [\n            \"Dono da Bola\",\n            \"Isgalamido\",\n            \"Zeh\",\n            \"Assasinu Credi\"\n        ],\n        \"kills\": {\n            \"Dono da Bola\": 0,\n            \"Isgalamido\": 2,\n            \"Zeh\": 1,\n            \"Assasinu Credi\": -1\n        }\n    },\n    \"game_6\": {\n        \"total_kills\": 29,\n        \"players\": [\n            \"Fasano Agait\",\n            \"Oootsimo\",\n            \"Isgalamido\",\n            \"Zeh\",\n            \"Dono da Bola\",\n            \"UnnamedPlayer\",\n            \"Maluquinho\",\n            \"Assasinu Credi\",\n            \"Mal\"\n        ],\n        \"kills\": {\n            \"Fasano Agait\": 0,\n            \"Oootsimo\": 8,\n            \"Isgalamido\": 3,\n            \"Zeh\": 7,\n            \"Dono da Bola\": 2,\n            \"UnnamedPlayer\": 0,\n            \"Maluquinho\": 0,\n            \"Assasinu Credi\": 1,\n            \"Mal\": 0\n        }\n    },\n    \"game_7\": {\n        \"total_kills\": 130,\n        \"players\": [\n            \"Oootsimo\",\n            \"Isgalamido\",\n            \"Zeh\",\n            \"Dono da Bola\",\n            \"Mal\",\n            \"Assasinu Credi\",\n            \"Chessus!\",\n            \"Chessus\"\n        ],\n        \"kills\": {\n            \"Oootsimo\": 20,\n            \"Isgalamido\": 14,\n            \"Zeh\": 8,\n            \"Dono da Bola\": 10,\n            \"Mal\": -3,\n            \"Assasinu Credi\": 19,\n            \"Chessus!\": 0,\n            \"Chessus\": 0\n        }\n    },\n    \"game_8\": {\n        \"total_kills\": 89,\n        \"players\": [\n            \"Oootsimo\",\n            \"Isgalamido\",\n            \"Zeh\",\n            \"Dono da Bola\",\n            \"Mal\",\n            \"Assasinu Credi\"\n        ],\n        \"kills\": {\n            \"Oootsimo\": 15,\n            \"Isgalamido\": 20,\n            \"Zeh\": 12,\n            \"Dono da Bola\": 1,\n            \"Mal\": -3,\n            \"Assasinu Credi\": 9\n        }\n    },\n    \"game_9\": {\n        \"total_kills\": 67,\n        \"players\": [\n            \"Oootsimo\",\n            \"Isgalamido\",\n            \"Zeh\",\n            \"Dono da Bola\",\n            \"Mal\",\n            \"Assasinu Credi\",\n            \"Chessus!\",\n            \"Chessus\"\n        ],\n        \"kills\": {\n            \"Oootsimo\": 8,\n            \"Isgalamido\": 1,\n            \"Zeh\": 12,\n            \"Dono da Bola\": 1,\n            \"Mal\": 2,\n            \"Assasinu Credi\": 7,\n            \"Chessus!\": 0,\n            \"Chessus\": 8\n        }\n    },\n    \"game_10\": {\n        \"total_kills\": 60,\n        \"players\": [\n            \"Oootsimo\",\n            \"Dono da Bola\",\n            \"Zeh\",\n            \"Chessus\",\n            \"Mal\",\n            \"Assasinu Credi\",\n            \"Isgalamido\"\n        ],\n        \"kills\": {\n            \"Oootsimo\": -1,\n            \"Dono da Bola\": 3,\n            \"Zeh\": 7,\n            \"Chessus\": 5,\n            \"Mal\": 1,\n            \"Assasinu Credi\": 3,\n            \"Isgalamido\": 5\n        }\n    },\n    \"game_11\": {\n        \"total_kills\": 20,\n        \"players\": [\n            \"Dono da Bola\",\n            \"Isgalamido\",\n            \"Zeh\",\n            \"Oootsimo\",\n            \"Chessus\",\n            \"Assasinu Credi\",\n            \"UnnamedPlayer\",\n            \"Mal\"\n        ],\n        \"kills\": {\n            \"Dono da Bola\": -2,\n            \"Isgalamido\": 4,\n            \"Zeh\": 0,\n            \"Oootsimo\": 4,\n            \"Chessus\": 0,\n            \"Assasinu Credi\": -3,\n            \"UnnamedPlayer\": 0,\n            \"Mal\": 0\n        }\n    },\n    \"game_12\": {\n        \"total_kills\": 160,\n        \"players\": [\n            \"Isgalamido\",\n            \"Dono da Bola\",\n            \"Zeh\",\n            \"Oootsimo\",\n            \"Chessus\",\n            \"Assasinu Credi\",\n            \"Mal\"\n        ],\n        \"kills\": {\n            \"Isgalamido\": 24,\n            \"Dono da Bola\": 3,\n            \"Zeh\": 11,\n            \"Oootsimo\": 12,\n            \"Chessus\": 12,\n            \"Assasinu Credi\": 18,\n            \"Mal\": -7\n        }\n    },\n    \"game_13\": {\n        \"total_kills\": 6,\n        \"players\": [\n            \"Isgalamido\",\n            \"Dono da Bola\",\n            \"Zeh\",\n            \"Oootsimo\",\n            \"Chessus\",\n            \"Assasinu Credi\",\n            \"Mal\"\n        ],\n        \"kills\": {\n            \"Isgalamido\": -1,\n            \"Dono da Bola\": -1,\n            \"Zeh\": 2,\n            \"Oootsimo\": 1,\n            \"Chessus\": 0,\n            \"Assasinu Credi\": 0,\n            \"Mal\": 0\n        }\n    },\n    \"game_14\": {\n        \"total_kills\": 122,\n        \"players\": [\n            \"Isgalamido\",\n            \"Dono da Bola\",\n            \"Zeh\",\n            \"Oootsimo\",\n            \"Chessus\",\n            \"Assasinu Credi\",\n            \"Mal\"\n        ],\n        \"kills\": {\n            \"Isgalamido\": 22,\n            \"Dono da Bola\": 1,\n            \"Zeh\": 4,\n            \"Oootsimo\": 9,\n            \"Chessus\": 7,\n            \"Assasinu Credi\": 3,\n            \"Mal\": -5\n        }\n    },\n    \"game_15\": {\n        \"total_kills\": 3,\n        \"players\": [\n            \"Zeh\",\n            \"Assasinu Credi\",\n            \"Dono da Bola\",\n            \"Fasano Agait\",\n            \"Isgalamido\",\n            \"Oootsimo\"\n        ],\n        \"kills\": {\n            \"Zeh\": -3,\n            \"Assasinu Credi\": 0,\n            \"Dono da Bola\": 0,\n            \"Fasano Agait\": 0,\n            \"Isgalamido\": 0,\n            \"Oootsimo\": 0\n        }\n    },\n    \"game_16\": {\n        \"total_kills\": 0,\n        \"players\": [\n            \"Dono da Bola\",\n            \"Oootsimo\",\n            \"Isgalamido\",\n            \"Assasinu Credi\",\n            \"Zeh\"\n        ],\n        \"kills\": {\n            \"Dono da Bola\": 0,\n            \"Oootsimo\": 0,\n            \"Isgalamido\": 0,\n            \"Assasinu Credi\": 0,\n            \"Zeh\": 0\n        }\n    },\n    \"game_17\": {\n        \"total_kills\": 13,\n        \"players\": [\n            \"Dono da Bola\",\n            \"Oootsimo\",\n            \"Isgalamido\",\n            \"Assasinu Credi\",\n            \"Zeh\",\n            \"UnnamedPlayer\",\n            \"Mal\"\n        ],\n        \"kills\": {\n            \"Dono da Bola\": -2,\n            \"Oootsimo\": 0,\n            \"Isgalamido\": 0,\n            \"Assasinu Credi\": -3,\n            \"Zeh\": 0,\n            \"UnnamedPlayer\": 0,\n            \"Mal\": -1\n        }\n    },\n    \"game_18\": {\n        \"total_kills\": 7,\n        \"players\": [\n            \"Dono da Bola\",\n            \"Oootsimo\",\n            \"Isgalamido\",\n            \"Assasinu Credi\",\n            \"Zeh\",\n            \"Mal\"\n        ],\n        \"kills\": {\n            \"Dono da Bola\": -1,\n            \"Oootsimo\": 0,\n            \"Isgalamido\": 1,\n            \"Assasinu Credi\": 2,\n            \"Zeh\": 2,\n            \"Mal\": -1\n        }\n    },\n    \"game_19\": {\n        \"total_kills\": 95,\n        \"players\": [\n            \"Isgalamido\",\n            \"Oootsimo\",\n            \"Dono da Bola\",\n            \"Assasinu Credi\",\n            \"Zeh\",\n            \"Mal\"\n        ],\n        \"kills\": {\n            \"Isgalamido\": 13,\n            \"Oootsimo\": 10,\n            \"Dono da Bola\": 12,\n            \"Assasinu Credi\": 8,\n            \"Zeh\": 20,\n            \"Mal\": 2\n        }\n    },\n    \"game_20\": {\n        \"total_kills\": 3,\n        \"players\": [\n            \"Isgalamido\",\n            \"Oootsimo\",\n            \"Dono da Bola\",\n            \"Assasinu Credi\",\n            \"Zeh\",\n            \"Mal\"\n        ],\n        \"kills\": {\n            \"Isgalamido\": 0,\n            \"Oootsimo\": 1,\n            \"Dono da Bola\": 1,\n            \"Assasinu Credi\": 0,\n            \"Zeh\": 0,\n            \"Mal\": 0\n        }\n    },\n    \"game_21\": {\n        \"total_kills\": 131,\n        \"players\": [\n            \"Isgalamido\",\n            \"Oootsimo\",\n            \"Dono da Bola\",\n            \"Assasinu Credi\",\n            \"Zeh\",\n            \"Mal\"\n        ],\n        \"kills\": {\n            \"Isgalamido\": 17,\n            \"Oootsimo\": 21,\n            \"Dono da Bola\": 12,\n            \"Assasinu Credi\": 16,\n            \"Zeh\": 19,\n            \"Mal\": 6\n        }\n    }\n}"
+						},
+						{
+							"name": "Invalide Token",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "authorization",
+										"value": "token jwt",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/log",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"log"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "48"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"30-ZydqsoYVsj+qlHQ1CJd+xH0i2k8\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 13 Sep 2021 23:13:13 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"error\",\n    \"message\": \"Invalid JWT token\"\n}"
+						},
+						{
+							"name": "Missing Token",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "authorization",
+										"value": "{{token}}",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/log",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"log"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "51"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"33-u+eFzfxjHpXbx4TB7Kcq4P3Fqvg\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 13 Sep 2021 23:12:36 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"error\",\n    \"message\": \"JWT token is missing\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Authenication",
+			"item": [
+				{
+					"name": "Authentication",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/auth",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"auth"
+							]
+						},
+						"description": "Route to generate a token for use in all other routes in application"
+					},
+					"response": [
+						{
+							"name": "Authentication SUCCESS",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/auth",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"auth"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "140"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"8c-dTr6j0rjGUYLxcZtaUokSMaX1oI\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 13 Sep 2021 23:02:52 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2MzE1NzQxNzIsImV4cCI6MTYzMTY2MDU3Mn0.KD-gAJ_A9wmFzTM-pivLu1VQLsDqpUIN7wDkYuSxH9g\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Status Server",
+			"item": [
+				{
+					"name": "Status",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}",
+							"host": [
+								"{{baseUrl}}"
+							]
+						},
+						"description": "Route to get the state of the server"
+					},
+					"response": [
+						{
+							"name": "Status SUCCESS",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}",
+									"host": [
+										"{{baseUrl}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "46"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2e-3H5kwzWH5sMZI2V+spQycIPxDno\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 14 Sep 2021 01:34:33 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Server online\"\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"const baseUrl = pm.collectionVariables.get('baseUrl');",
+					"",
+					"pm.sendRequest({",
+					"    url: `${baseUrl}/auth`,",
+					"    method: 'GET',",
+					"    header: {",
+					"        'content-type': 'application/json'",
+					"    }",
+					"}, (err, res) => {",
+					"    pm.collectionVariables.set('token', res.json().token);",
+					"});"
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:3333"
+		},
+		{
+			"key": "token",
+			"value": "JWT TOKEN"
+		}
+	]
+}

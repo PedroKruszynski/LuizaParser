@@ -1,3 +1,5 @@
+import AppError from '@shared/errors/AppError';
+
 import GameService from './GameService';
 
 import FakeLogProvider from '../providers/LogProvider/fakes/FakeLogProvider';
@@ -21,5 +23,18 @@ describe('LogParser', () => {
             ],
             'total_kills': expect.any(Number)
         });
+    });
+
+    it('should be able to parse the log of games and return a error when not found a game with the giving name', async () => {
+        const fakeLogProvider = new FakeLogProvider();
+
+        const game = new GameService(
+            fakeLogProvider
+        );
+
+        expect(
+            game.execute('Scalebound')
+        ).rejects.toBeInstanceOf(AppError);
+
     });
 });
