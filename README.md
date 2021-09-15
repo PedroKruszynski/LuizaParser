@@ -7,6 +7,7 @@
   - [Application dependencies](https://github.com/PedroKruszynski/LuizaParser#application-dependencies)
   - [Build docker image](https://github.com/PedroKruszynski/LuizaParser#build-docker-image)
   - [Running development](https://github.com/PedroKruszynski/LuizaParser#running-development)
+  - [Running build](https://github.com/PedroKruszynski/LuizaParser#running-build)
   - [Running tests](https://github.com/PedroKruszynski/LuizaParser#running-tests)
 - [API](https://github.com/PedroKruszynski/LuizaParser#api-endpoints)
 
@@ -58,6 +59,19 @@ $ yarn
 
 # run typescript server
 $ yarn dev:server
+```
+
+### Running build
+
+Exist scripts in the project root to execute the build and execute
+I prefer yarn but you can choice either npm.
+
+``` bash
+# build the application
+$ yarn build
+
+# run node server
+$ yarn start
 ```
 
 ### Running tests
