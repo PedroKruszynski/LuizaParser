@@ -31,7 +31,7 @@ You have to copy the '.env.example' file and rename to '.env'
 In that file you have the option to choice the port of the app and jwt secret.
 
 ``` bash
-APP_PORT=3333
+PORT=3333
 
 JWT_SECRET=0910176063cf5fb1edbd111b23d54081
 ```
